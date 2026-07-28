@@ -1,0 +1,18 @@
+{
+  "name": "@piotrkonieczny/ai-artifacts",
+  "version": "0.1.0",
+  "description": "AI artifacts: skills for opencode and other AI coding assistants",
+  "files": [
+    "skills"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "ai",
+    "skills",
+    "opencode",
+    "artifacts"
+  ],
+  "license": "MIT"
+}
