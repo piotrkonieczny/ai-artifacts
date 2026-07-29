@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SKILLS_DIR="$REPO_ROOT/skills"
+PACKAGE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SKILLS_DIR="$PACKAGE_ROOT/skills"
 
 if [ ! -d "$SKILLS_DIR" ]; then
   echo "Error: skills/ directory not found at $SKILLS_DIR"
   exit 1
+fi
+
+# When installed via npm, find the consumer's repo root
+# Script is at: <consumer>/node_modules/@piotrkonieczny/ai-artifacts/scripts/
+# Go up 4 levels to reach <consumer>/
+if [[ "$PACKAGE_ROOT" == *"/node_modules/"* ]]; then
+  REPO_ROOT="$(cd "$PACKAGE_ROOT/../../.." && pwd)"
+else
+  REPO_ROOT="$PACKAGE_ROOT"
 fi
 
 link_tool() {
@@ -21,12 +30,14 @@ link_tool() {
     local name
     name="$(basename "$skill")"
     local target="$tool_dir/$name"
+    local rel_path
+    rel_path="$(realpath --relative-to="$tool_dir" "$SKILLS_DIR/$name")"
 
     if [ -L "$target" ]; then
       rm "$target"
     fi
 
-    ln -s "../../skills/$name" "$target"
+    ln -s "$rel_path" "$target"
     count=$((count + 1))
   done
 
