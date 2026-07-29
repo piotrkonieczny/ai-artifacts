@@ -1,3 +1,11 @@
+---
+name: pk10x-code-review
+description: >-
+  Code review workflow for pull requests. Triggers on PR reviews, code quality
+  checks, and codebase audits. Provides systematic review with checklist covering
+  correctness, security, performance, and maintainability.
+---
+
 # pk10x-code-review
 
 Systematic code review skill for AI-assisted development.

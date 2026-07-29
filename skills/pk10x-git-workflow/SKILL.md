@@ -1,3 +1,11 @@
+---
+name: pk10x-git-workflow
+description: >-
+  Git branching, commit messages, and PR conventions. Triggers when starting
+  features, writing commits, or managing branches. Covers Conventional Commits,
+  branch naming, and merge workflow.
+---
+
 # pk10x-git-workflow
 
 Git workflow conventions for consistent, traceable development.

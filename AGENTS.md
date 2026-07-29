@@ -9,7 +9,7 @@ This is an npm package (`@piotrkonieczny/ai-artifacts`) containing AI skills for
 ```
 skills/
   pk10x-<name>/
-    SKILL.md          # Skill definition: when to use, workflow, output format
+    SKILL.md          # Skill definition: frontmatter + when to use, workflow, output format
     references/       # Supporting docs (checklists, examples, guides)
 ```
 
@@ -17,6 +17,9 @@ skills/
 
 - All skills are prefixed with `pk10x-`
 - Each skill must have a `SKILL.md` at its root
+- `SKILL.md` must start with YAML frontmatter containing `name` and `description`
+  - `name`: must match the folder name
+  - `description`: summarize what the skill does and when to trigger it, front-load keywords
 - `references/` is optional — add it only when the skill needs supporting material
 - Keep SKILL.md concise: trigger conditions, workflow steps, output format
 - Reference docs go in `references/` — detailed checklists, examples, guides
