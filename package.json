@@ -1,6 +1,6 @@
 {
   "name": "@piotrkonieczny/ai-artifacts",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "AI artifacts: skills for opencode and other AI coding assistants",
   "files": [
     "skills",
