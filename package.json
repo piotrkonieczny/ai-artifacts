@@ -1,10 +1,14 @@
 {
   "name": "@piotrkonieczny/ai-artifacts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AI artifacts: skills for opencode and other AI coding assistants",
   "files": [
-    "skills"
+    "skills",
+    "scripts"
   ],
+  "scripts": {
+    "link": "bash scripts/link-skills.sh"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
